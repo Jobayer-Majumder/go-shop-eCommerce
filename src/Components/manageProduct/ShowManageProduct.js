@@ -11,7 +11,11 @@ const ShowManageProduct = (props) => {
             method: 'DELETE',
         })
         .then(res => res.json())
-        .then(result => console.log(result))
+        .then(result => {
+            if(result){
+                alert('Product Deleted successfully')
+            }
+        })
     };
 
     return (

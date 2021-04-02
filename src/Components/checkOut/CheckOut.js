@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../../App'
 
@@ -18,6 +18,7 @@ const CheckOut = () => {
             })
     }, [id]);
 
+    const history = useHistory();
     const handleCheckOut = () => {
         const checkOutInfo = {
             ...product,
@@ -33,8 +34,9 @@ const CheckOut = () => {
         .then(result => {
             console.log(result)
         });
+        history.push('/orders')
 
-        console.log(checkOutInfo);
+        // console.log(checkOutInfo);
     };
 
     const { pdName, wight, price } = product;

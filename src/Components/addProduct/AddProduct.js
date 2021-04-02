@@ -5,7 +5,7 @@ import Sidebar from '../sidebar/Sidebar';
 
 const AddProduct = () => {
     const [imgUrl, setImgUrl] = useState();
-    const { register, handleSubmit} = useForm();
+    const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         const { pdName, wight, price } = data;
         const productInfo = {
@@ -20,7 +20,11 @@ const AddProduct = () => {
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(productInfo)
         })
-            .then(result => console.log(result));
+        .then(result => {
+            if(result){
+                alert('Product Added successfully')
+            }
+        });
     };
 
 
