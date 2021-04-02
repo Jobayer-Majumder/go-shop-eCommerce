@@ -7,7 +7,7 @@ const ManageProduct = () => {
     const [showSnipper, setShowSnipper] = useState(true)
 
     useEffect(() => {
-        fetch('http://localhost:8000/manageProduct')
+        fetch('https://mysterious-sands-64603.herokuapp.com/manageProduct')
             .then(res => res.json())
             .then(data => {
                 setProduct(data)

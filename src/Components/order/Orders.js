@@ -12,7 +12,7 @@ const Orders = () => {
     const [showSnipper, setShowSnipper] = useState(true)
 
     useEffect(() => {
-        fetch(`http://localhost:8000/getOrder?email=${loggedInUser.email}`)
+        fetch(`https://mysterious-sands-64603.herokuapp.com/getOrder?email=${loggedInUser.email}`)
             .then(res => res.json())
             .then(data => {
                 setOrders(data)

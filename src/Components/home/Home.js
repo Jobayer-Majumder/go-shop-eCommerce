@@ -6,7 +6,7 @@ const Home = () => {
     const [showSnipper, setShowSnipper] = useState(true)
 
     useEffect(() => {
-        fetch('http://localhost:8000/getProducts')
+        fetch('https://mysterious-sands-64603.herokuapp.com/getProducts')
             .then(res => res.json())
             .then(data => {
                 setProduct(data)

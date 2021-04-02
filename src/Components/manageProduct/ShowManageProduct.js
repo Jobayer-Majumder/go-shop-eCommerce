@@ -7,7 +7,7 @@ const ShowManageProduct = (props) => {
     
 
     const handleDeleteProduct = () => {
-        fetch(`http://localhost:8000/deleteProduct/${_id}`, {
+        fetch(`https://mysterious-sands-64603.herokuapp.com/deleteProduct/${_id}`, {
             method: 'DELETE',
         })
         .then(res => res.json())

@@ -5,7 +5,6 @@ import Sidebar from '../sidebar/Sidebar';
 
 const AddProduct = () => {
     const [imgUrl, setImgUrl] = useState();
-
     const { register, handleSubmit} = useForm();
     const onSubmit = data => {
         const { pdName, wight, price } = data;
@@ -16,13 +15,12 @@ const AddProduct = () => {
             imgUrl
         };
 
-        fetch('http://localhost:8000/addProduct', {
+        fetch('https://mysterious-sands-64603.herokuapp.com/addProduct', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(productInfo)
         })
             .then(result => console.log(result));
-        console.log(productInfo)
     };
 
 
@@ -33,7 +31,6 @@ const AddProduct = () => {
         axios.post(`https://api.imgbb.com/1/upload`, imgData)
             .then((response) => {
                 setImgUrl(response.data.data.display_url)
-                console.log(response);
             })
             .catch((error) => {
                 console.log(error);

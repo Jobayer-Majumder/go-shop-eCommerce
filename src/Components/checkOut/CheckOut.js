@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
-import { useContext } from 'react/cjs/react.development';
+import { useParams } from 'react-router-dom';
+import { useContext } from 'react';
 import { UserContext } from '../../App'
 
 const CheckOut = () => {
-    const [loggedInUser] = useContext(UserContext)
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [product, setProduct] = useState([]);
     const [showSnipper, setShowSnipper] = useState(true)
     const { id } = useParams()
 
     useEffect(() => {
-        fetch(`http://localhost:8000/checkOut/${id}`)
+        fetch(`https://mysterious-sands-64603.herokuapp.com/checkOut/${id}`)
             .then(res => res.json())
             .then(data => {
                 setProduct(data[0])
@@ -25,7 +25,7 @@ const CheckOut = () => {
             date: new Date()
         };
         
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://mysterious-sands-64603.herokuapp.com/addOrder', {
             method: 'POST',
             headers: {'content-type' : 'application/json'},
             body: JSON.stringify(checkOutInfo)
