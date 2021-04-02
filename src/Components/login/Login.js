@@ -48,21 +48,10 @@ const Login = () => {
 
 
     return (
-        <div className="container mt-4">
+        <div className="container mt-5">
             <div className="row justify-content-center">
-                <div className="col-md-6 bg-light p-4 border">
-                    <form>
-                        <input className='form-control p-3 mb-3' type="email" name='email' placeholder='Email' required />
-                        <input className='form-control p-3 mb-3' type="password" name='password' placeholder='Password' required />
-                        <div className='text-center pt-3'>
-                            <button className="btn btn-primary w-100 mb-2">Login</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div className="row justify-content-center">
-                <div className="col-md-6 p-4 border border-top-0">
-                    <p className='text-center'> Or </p>
+                <div className="col-md-6 p-5 border">
+                    <h3 className='text-center'>Log in</h3>
                     <hr className='w-50' />
                     <button onClick={handleGoogleSignIn} className="btn btn-outline-primary border rounded-pill w-100 py-2 mb-2"><FontAwesomeIcon icon={faGoogle} /> Continue with Google</button>
                     <button className="btn btn-outline-primary border rounded-pill w-100 py-2"><FontAwesomeIcon icon={faFacebook} /> Continue with Facebook</button>
